@@ -12,7 +12,6 @@ def get_addr(i):
 
 
 def get_target(k, i, row, states):
-    print(1)
     col = -1
     res = {'ip': i['address']['addr'], 'hostname': get_addr(i), 'portid': k['portid'], 'protocol': k['protocol'],
            'portname': k['service']['name'], 'state': k['state']['state'], 'status': 'up'}
@@ -48,12 +47,12 @@ def get_result(i, row, states):
 
 
 def query(i, row):
+    first_row = row + 1
     states = []
     if 'port' not in i['ports']:
-        row += 1
+        row += 2
         i['ports']['port'] = []
 
-    first_row = row + 1
     row = get_result(i, row, states)
     res = {'ip': 'Opened ports: ' + str(len(states)), 'hostname': '', 'portid': '', 'protocol': '', 'portname': '',
            'state': '', 'status': ''}
