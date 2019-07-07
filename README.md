@@ -1,7 +1,5 @@
 # pynmap-xlsx
 
-Script generates a pretty report of nmap in the xlsx file.
-
 Examples:
 
 | Syntax | Description | Report |
